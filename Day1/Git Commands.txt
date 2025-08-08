@@ -1,0 +1,30 @@
+1. Set username git config --global user.name "Your Name"
+2. set email git config --global user.email "your@email.com"
+3. Add and commit - from local to remote
+git add <file_name>      # Stage a single file
+git add .                # Stage all changes
+git commit -m "message"  # Commit with message
+
+4. Branching: Branches let you work on different features or fixes without affecting the main code.
+git branch                   # List branches
+git branch <branch_name>     # Create branch
+git checkout <branch_name>   # Switch branch
+git checkout -b <name>       # Create & switch
+git merge <branch_name>      # Merge branch
+
+5.Stashing :Temporarily saves changes without committing them, so you can work on something else.
+
+git stash            # Save changes
+git stash list       # View stashes
+git stash apply      # Apply latest stash
+git stash pop        # Apply and delete stash
+
+6.Tags mark specific points in history (often used for releases).
+git tag                      # List tags
+git tag <tag_name>           # Create tag
+git push origin <tag_name>   # Push tag
+
+git clone <repo_url> #Creates a local copy of a remote repository.
+Fetch: Downloads changes from remote without merging.
+
+Pull: Fetch + merge changes into your branch.

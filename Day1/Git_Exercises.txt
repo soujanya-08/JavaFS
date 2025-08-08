@@ -1,0 +1,22 @@
+Ex1: Create a private Git repo.Clone it in local and create a copy or remote in local desktop.
+Created the repository https://github.com/soujanya-08/wiprojul2025 and copied to local.
+
+Ex2: Create a file mywork.txt. Using git add <filename> add the file to stating area.
+Use git commit -m "message" to commit and git pus to push it to remote repo.
+
+Ex3: Get a file from remote to local using git pull.
+
+Ex4: Collaborate your repo with someone
+collaborated with vyshnaviwipro
+
+Ex5: Fork from bmadcode/BMAD-MethoDlower
+Forked the repo and downloaded to my local computer
+
+Ex6: Create merge conflict and resolve
+
+Ex7:Create two branches and checkout
+
+
+
+
+
