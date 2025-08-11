@@ -1,0 +1,6 @@
+Ex1: Create an HTML document called hello.html . Title should show hello and in body you have 50 wordtext.
+Ex2: Print the following text on an HTML document :This is the first page of our simple web application. Please note that first page is in bold.
+Ex3: Create a text box that can have only positive odd numbers.
+
+Ex4: Create a table to display some employee information like employee name, employee id and salary. Show few data in that table, create some appropriate table column headers.
+Ex5: Create a drop down to show different currencies.
