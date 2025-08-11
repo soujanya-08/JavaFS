@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static page using Bootstrap</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"><link>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</head>
+<body>
+   <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <img class="navbar-brand" style="width: 50px;" src="data:image/webp;base64,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">
+    <p  class="navbar-brand" >Nitec</p>
+   
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search products.." aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">search</button>
+      </form>
+      
+      
+    </div>
+  </div>
+</nav>
+   </header>
+   <main>
+    <main>
+  <div class="container text-center">
+  <div class="row align-items-start mb-4 m-2">
+    <div class="col-md-9" >
+      <div class="card border p-3 d-flex flex-row justify-content-center" style="height: 400px;">
+        <div class="col-md-6 text-start">
+          <h2>Sequoia Inspiring Musico.</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Rem blanditiis laudantium, corporis ipsum debitis veritatis
+            consequatur itaque perferendis vitae commodi sit deleniti nemo
+            nesciunt, cupiditate, perspiciatis accusamus facere.
+            Explicabo accusamus aspernatur mollitia.
+          </p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img width="200px"
+            src="//www.gonoise.com/cdn/shop/files/Artboard_8_Am5.webp?v=1737632340"
+            alt="prod-img" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3 d-flex flex-column align-items-center gap-3">
+   
+      <div class="card w-100">
+        <div class="card-body">
+          <p class="mb-2 fw-bold">Popular Colors</p>
+          <div class="d-flex gap-2 justify-content-center">
+            <div class="bg-primary border border-dark rounded-circle" style="width:20px; height:20px;"></div>
+            <div class="bg-warning border border-dark rounded-circle" style="width:20px; height:20px;"></div>
+            <div class="bg-success border border-dark rounded-circle" style="width:20px; height:20px;"></div>
+            <div class="bg-danger border border-dark rounded-circle" style="width:20px; height:20px;"></div>
+            <div class="bg-info border border-dark rounded-circle" style="width:20px; height:20px;"></div>
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="card w-80">
+        <img src="//www.gonoise.com/cdn/shop/files/AirClipsBlack_5.webp?v=1732867997"
+          class="card-img-top" alt="Duopods">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="row">
+      <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body text-center">
+            <img width="100px" src="//www.gonoise.com/cdn/shop/files/Twist-Go-GN-Carousel-gold-1_b486a5fc-492a-49d6-9abc-7dc8e259a747.png?v=1709117509" alt="prod-img">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="card">
+          <div class="card-body text-center">
+            <img width="100px" src="//www.gonoise.com/cdn/shop/files/3.77_copy_result.webp?v=1744184963" alt="prod-img">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card">
+          <div class="card-body text-center">
+            <img width="100px" src="//www.gonoise.com/cdn/shop/files/1_6__result.webp?v=1754282467" alt="prod-img">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card">
+          <div class="card-body text-center">
+            <img width="100px" src="//www.gonoise.com/cdn/shop/files/Artboard_1__1_-removebg-preview.png?v=1749448917" alt="prod-img">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   </main>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h2><b>Student Registration Form</b></h2>
+    <div>
+        <label>Roll no. :</label>
+        <input type="text"/><br/>
+        <label >Student name :</label>
+        <input type="text" placeholder="First name"/>
+        <input type="text" placeholder="Last name"/><br/>
+        <label>Father's name:</label>
+        <input type="text" placeholder="Father's name"/><br/>
+        <label>Date of birth :</label>
+       
+        <input type="number"size="2" /> <span>-</span>
+        <input type="number" size="2"/><span>-</span>
+        <input type="number" /><br/>
+        <label >Mobile no. :</label>
+        <input type="text" size="1" value="+91" /> -
+        <input type="number"/><br/>
+        <label>Email ID :</label>
+        <input type="email"/><br/>
+        <label>Password :</label>
+        <input type="password"/><br/>
+        <label>Gender</label>
+        <input type="radio" name="gender"/>Male
+        <input type="radio" name="gender"/>Female<br/>
+        <label>Department</label>
+        <input type="checkbox" name="dept"/>CSE
+       <input type="checkbox" name="dept"/>IT
+       <input type="checkbox" name="dept"/>ECE
+       <input type="checkbox" name="dept"/>Civil
+       <input type="checkbox" name="dept"/>Mech
+
+       <br/>
+       <label>Course :</label>
+       <select id="course" name="course">
+        <option value="select">----Select Current Course's----</option>
+        <option value="select">Java</option>
+        <option value="select">Python</option>
+       </select><br/>
+       <label>Student photo :</label>
+       <input type="file"/><br/>
+       <label>City</label>
+       <input type="text"/><br/>
+       <label>Address :</label>
+       <input type="textarea"/><br/>
+       <button>Register</button>
+
+    </div>
+</body>
+</html>
