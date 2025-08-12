@@ -1,0 +1,27 @@
+.container{
+    margin-top: 100px;
+    width:500px;
+    background-color: beige;
+    text-align: center;
+    border: 2px solid grey;
+
+}
+h2{
+    color:blue;
+    margin-top: 30px;
+}
+.inputTxt{
+    padding: 10px;
+    margin: 20px;
+}
+.pass{
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.checkbox{
+    margin: 10px;
+}
+button{
+    margin:40px;
+    padding: 15px;
+}
