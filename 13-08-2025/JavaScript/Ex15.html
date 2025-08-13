@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #taskList{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width:30%;
+        }
+        .task-item{
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+            padding: 10px;
+        }
+        .delete-btn{
+            margin-left: 10px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>To Do List</h2>
+    <label>Enter a Task: </label><input id="input-text" type="text"/>
+    <button onclick="addTask()">Add</button>
+    <div id="taskList"></div>
+</body>
+<script src="ex15.js"></script>
+</html>

@@ -1,0 +1,1 @@
+document.getElementById("h1-tag").innerText = "Hello world from JavaScript";

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div align="center">
+        <h2>Log In</h2>
+        <label>Email :</label>
+        <input type="email" id="email-input" onblur="email()"/>
+        <div id="empty-email" style="color: red;"></div>
+        <br/><br/>
+        <label>Password :</label>
+        <input type="password" id="password" onblur="password()"/>
+        <div id="empty-password" style="color: red;"></div>
+        <br/><br/>
+        <button type="submit" onclick="login()">Log In</button>
+    </div>
+    
+</body>
+<script src="ex13.js"></script>
+</html>
