@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+                               http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+<bean id="department" class="com.wipro2.springdemo.beans.Department">
+<property name="deptCode" value="FIN"></property>
+<property name="deptName" value="Finance"></property>
+</bean>  
+<!--  <bean id="college" class="com.wipro2.springdemo.beans.College">
+<property name="clgName" value="KLEIT"></property>
+<property name="dept" ref="department"></property>
+</bean>   -->
+<bean id="college" class="com.wipro2.springdemo.beans.College">
+<constructor-arg name="clgName" value="SDMCET"/>
+<constructor-arg name="dept" ref="department"/>
+ </bean> 
+                       
+</beans>
