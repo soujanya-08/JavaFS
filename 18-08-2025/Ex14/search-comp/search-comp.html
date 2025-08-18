@@ -1,0 +1,13 @@
+<!-- <input [(ngModel)] ="names"/>
+@for(name of listBox; track $index;){
+    @if(name == names){
+       <p> {{name}}</p>
+    }
+} -->
+<div>
+    @for(name of filteredNames; track $index;){
+    {{name}}
+}
+<br/>
+<input [(ngModel)] ="names"/>
+</div>
