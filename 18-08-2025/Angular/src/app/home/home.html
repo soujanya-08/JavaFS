@@ -1,0 +1,17 @@
+<!-- Ex 15 -->
+<h2>List of Books</h2>
+<div class="container mt-3">
+  <div class="row row-cols-5">
+    @for(book of books; track $index;){
+    <div class="col mb-3" >
+      <div class="card">
+         <img [src]="book.image" class="card-img-top" alt="Book">
+        <div class="card-body">
+          <h6>{{ book.title }}</h6>
+          <p>{{ book.desc }}</p>
+        </div>
+      </div>
+    </div>
+}
+  </div>
+</div>

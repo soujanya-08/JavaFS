@@ -1,0 +1,53 @@
+<!-- Ex 11 -->
+ <div>
+<input style="margin: 10px;"type="checkbox" (click) ="toggle()" /> 
+@if(flag){
+    <span>I am Happy</span>
+}
+@else{
+    <span>I am Sad</span>
+}
+</div>
+
+<!-- Ex 12 -->
+ <div>
+<button (click) ="load()">Load</button>
+<select id="drp">
+    <option >Select country</option>
+    @for(country of countries; track $index;){
+    <option>{{country}}</option>
+    }
+</select>
+</div>
+<!-- Ex 13 -->
+ <div>
+ <select [(ngModel)] = "color">
+    <option value="Black">Black</option>
+    <option value="Pink">Pink</option>
+    <option value="Blue">Blue</option>
+    <option value="Red">Red</option>
+    <option value="Orange">Orange</option>
+    <option value="Green">Green</option>
+ </select>
+
+@switch(color){
+    @case("Pink"){
+        <h2 style="color: pink;">World is colorful</h2>
+    }
+    @case("Blue"){
+        <h2 style="color: lightskyblue;">World is colorful</h2>
+    }
+    @case("Red"){
+        <h2 style="color: red;">World is colorful</h2>
+    }
+    @case("Orange"){
+        <h2 style="color: orange;">World is colorful</h2>
+    }
+    @case("Green"){
+        <h2 style="color: green;">World is colorful</h2>
+    }
+    @default(){
+        <h2 style="color: back;">World is colorful</h2>
+    }
+}
+</div>
