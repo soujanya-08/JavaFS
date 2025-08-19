@@ -1,0 +1,13 @@
+.div1{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+    
+}
+.div2{
+    padding: 10px;
+    display: flex;
+    gap:10px;
+}

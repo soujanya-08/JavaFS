@@ -1,0 +1,41 @@
+<!-- <app-display-list></app-display-list> -->
+ <!-- Ex 5 -->
+<!-- <h2>Displaying Fruits using Parent child relation</h2>
+<div class="container mt-4">
+  <div class="row">
+    @for (item of itemsList; track item.name) {
+        <div class="col-md-3 mb-3">
+      <app-ex5 
+        [imgSrc]="item.imgsrc" 
+        [name]="item.name" 
+        [desc]="item.desc">
+      </app-ex5>
+      </div>
+    }
+  </div>
+</div> -->
+
+<!-- Ex 6 -->
+<!-- <div class="container mt-4">
+  <div class="row">
+    @for (item of fruitsList; track item.name) {
+    <div class="col-md-3 mb-3">
+      <app-ex6 [fruit] = "item"  (btnClick)="remove($event)">
+      </app-ex6>
+      </div>
+    }
+  </div>
+</div> -->
+
+<!-- Ex 7 -->
+<div class="container mt-4">
+  <div class="row">
+    @for (item of fruitsList; track item.name) {
+    <div class="col-md-3 mb-3">
+      <app-ex7 [fruit] = "item"  (remove)="btnClick($event)">
+      </app-ex7>
+      </div>
+    }
+  </div>
+</div>
+

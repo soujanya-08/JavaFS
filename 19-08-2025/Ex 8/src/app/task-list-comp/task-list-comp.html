@@ -1,0 +1,16 @@
+<table [ngClass] ="'table'">
+    <tr [ngStyle]="{'color':'blue', 'text-align':'center'}">
+      <th>Task Description</th>
+      <th>Category</th>
+      <th>Delete</th>
+    </tr>
+    @for(task of tasks; track task.id ){
+    <tr>
+      <td>{{ task.description }}</td>
+      <td>{{ task.category }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(task.id)">Delete</button>
+      </td>
+    </tr>
+    }
+</table>

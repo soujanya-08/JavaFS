@@ -1,0 +1,17 @@
+<form>
+<div [ngClass]="'div1'">
+<div [ngClass]="'div2'">
+<label>Task Description</label>
+<input type="text"  [(ngModel)]="task.description" name="description">
+</div>
+<div [ngClass]="'div2'">
+<label>Task Category</label>
+    <select  [(ngModel)]="task.category" name="category">
+      <option value="Work">Work</option>
+      <option value="Study">Study</option>
+      <option value="Exercise">Exercise</option>
+    </select>
+</div>
+     <button class="btn btn-success" (click)="onAdd()">Add Task</button>
+     </div>
+</form>

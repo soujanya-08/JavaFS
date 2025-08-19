@@ -1,0 +1,9 @@
+<p style="text-align: center; font-size: 22px;border-bottom: 3px solid red;">List of Tasks</p>
+<div class="container">
+  <app-task-list-comp 
+      [tasks]="tasks" 
+      (deleteTask)="deleteTask($event)">
+  </app-task-list-comp>
+  <app-task-comp (addTask)="addTask($event)">
+  </app-task-comp>
+</div>
