@@ -1,0 +1,23 @@
+<!-- Ex 1 -->
+<div class="container mt-3">
+  <input type="text" [(ngModel)]="inputText" placeholder="Enter text">
+
+  <p>Output: {{ inputText | uppercase }}</p>
+</div>
+<!-- Ex 2 -->
+<div class="container mt-3">
+  <input type="date" [(ngModel)]="selectedDate">
+
+  @if (selectedDate) {
+    <p>{{ selectedDate | date:'shortDate' }}</p>
+  }
+</div>
+<!-- Ex 3 -->
+<div class="container mt-3">
+  <label>Enter Celsius:</label>
+  <input type="number" [(ngModel)]="celsius" />
+
+  <p>Converted: {{ celsius | ctf }}</p>
+</div>
+<!-- Ex 4 -->
+<span appHighlightStrikeThru >Some text...</span>
