@@ -1,0 +1,25 @@
+<h2>Vehicle list</h2>
+<div>
+@for(vehicle of vehicleList; track vehicle.id ){
+    <p>Id : {{vehicle.id}} - Make: {{vehicle.make}} -Model: {{vehicle.model}}-FuelType: {{vehicle.fuelType}} - Price: {{vehicle.price}}</p>
+<button (click)="edit(vehicle.id)">Edit</button>
+  <button (click)="delete(vehicle.id)">Delete</button>
+}
+</div>
+<br/>
+<div>
+Vehicle Make : <input type="text" [(ngModel)]="vehicleEdit.make" placeholder="make"/>
+Model :<input type="text" [(ngModel)]="vehicleEdit.model" placeholder="model"/>
+Fuel Type :<input type="text" [(ngModel)]="vehicleEdit.fuelType" placeholder="fuel-type"/>
+Price :<input type="text" [(ngModel)]="vehicleEdit.price" placeholder="price"/>
+<button (click)="update()">Update</button>
+</div>
+<br/>
+<div>
+Vehicle Make : <input type="text" [(ngModel)]="vehicleAdd.make" placeholder="make"/>
+Model :<input type="text" [(ngModel)]="vehicleAdd.model" placeholder="model"/>
+Fuel Type :<input type="text" [(ngModel)]="vehicleAdd.fuelType" placeholder="fuel-type"/>
+Price :<input type="text" [(ngModel)]="vehicleAdd.price" placeholder="price"/>
+<button (click)="save()">Save</button>
+</div>
+

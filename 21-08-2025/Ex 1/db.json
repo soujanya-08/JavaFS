@@ -1,0 +1,25 @@
+{
+  "vehicle": [
+    {
+      "make": "Access",
+      "fuelType": "Diesel",
+      "model": "Access 125X",
+      "price": "40970",
+      "id": "e2b5"
+    },
+    {
+      "id": "8151",
+      "make": "Hyundai",
+      "fuelType": "Diesel",
+      "model": "Grand i10",
+      "price": 100000.99
+    },
+    {
+      "id": "dada",
+      "make": "Honda",
+      "fuelType": "Diesel",
+      "model": "XQY",
+      "price": 90999.9
+    }
+  ]
+}
