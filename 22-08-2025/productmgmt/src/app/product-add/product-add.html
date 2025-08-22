@@ -1,0 +1,19 @@
+<form>
+<div>
+    <label for="name">Name:</label>
+    <input id="name" name="name" [(ngModel)]="name"   type="text">
+  </div>
+  <div>
+    <label for="name">Category:</label>
+    <input id="category" name="category" [(ngModel)]="category"   type="text">
+  </div>
+  <div>
+    <label for="name">Price:</label>
+    <input id="price" name="price" [(ngModel)]="price"  type="text">
+  </div>
+  <div>
+    <label for="name">Quantity:</label>
+    <input id="price" name="qty" [(ngModel)]="qty"  type="text">
+  </div>
+  <button (click)="submit()">Submit</button>
+</form>

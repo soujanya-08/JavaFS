@@ -1,0 +1,15 @@
+<div>
+  <h2>Purchase Product</h2>
+
+  <label>Select Product:</label>
+  <select [(ngModel)]="selectedProductId">
+    <option *ngFor="let p of products" [value]="p.id">{{p.name}} (Stock: {{p.qty}})</option>
+  </select>
+
+  <label>Quantity:</label>
+  <input type="number" [(ngModel)]="purchaseQty" min="1">
+
+  <button (click)="placeOrder()">Place Order</button>
+
+  <p style="color:red">{{message}}</p>
+</div>

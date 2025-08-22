@@ -1,0 +1,15 @@
+<div>
+  <h2>Order History</h2>
+  <table border="1">
+    <tr>
+      <th>Date</th>
+      <th>Product</th>
+      <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let o of orders">
+      <td>{{o.orderDate|commaDatePipe}}</td>
+      <td>{{o.product.name}}</td>
+      <td>{{o.qtyPurchased}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+{
+  "product": [
+    {
+      "name": "Samsung A55",
+      "category": "Accessories",
+      "price": "4000",
+      "id": "458e"
+    },
+    {
+      "id": "40d8",
+      "name": "Teddy",
+      "category": "soft toy",
+      "price": "500"
+    },
+    {
+      "id": "c65c",
+      "name": "Dell Laptop",
+      "category": "Electronics",
+      "price": "720089"
+    }
+  ]
+}
