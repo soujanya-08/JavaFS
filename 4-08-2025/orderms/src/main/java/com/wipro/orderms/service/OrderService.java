@@ -1,6 +1,7 @@
 package com.wipro.orderms.service;
 import java.util.List;
 
+import com.wipro.orderms.dto.OrderResponse;
 import com.wipro.orderms.entity.Order;
 
 
@@ -8,5 +9,6 @@ import com.wipro.orderms.entity.Order;
 public interface OrderService {
 
 	void save(Order order);
-	List<Order> findAll();
+	//List<Order> findAll();
+	List<OrderResponse> findAll();
 }

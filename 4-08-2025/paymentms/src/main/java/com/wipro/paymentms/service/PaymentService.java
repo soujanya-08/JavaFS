@@ -10,4 +10,5 @@ public interface PaymentService {
 
 	void save(Payment order);
 	List<Payment> findAll();
+	Payment findByOrderId(int orderId);
 }

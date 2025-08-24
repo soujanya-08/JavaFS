@@ -6,5 +6,6 @@ import com.wipro.paymentms.entity.Payment;
 
 @Repository
 public interface PaymentRepo extends JpaRepository<Payment, Integer> {
+	Payment findByOrderId(int orderId);
 
 }

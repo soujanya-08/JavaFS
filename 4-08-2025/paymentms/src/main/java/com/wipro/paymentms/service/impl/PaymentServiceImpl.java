@@ -28,5 +28,9 @@ public class PaymentServiceImpl implements PaymentService {
 		 
 		return paymentRepo.findAll();
 	}
+	@Override
+	public Payment findByOrderId(int orderId) {
+	    return paymentRepo.findByOrderId(orderId);
+	}
 
 }

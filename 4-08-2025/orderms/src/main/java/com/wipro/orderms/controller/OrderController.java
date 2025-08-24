@@ -1,4 +1,5 @@
 package com.wipro.orderms.controller;
+import com.wipro.orderms.dto.OrderResponse;
 import com.wipro.orderms.entity.Order;
 import com.wipro.orderms.service.OrderService;
 import java.util.List;
@@ -28,9 +29,15 @@ public class OrderController {
 		
 	}
 
+//	@GetMapping
+//	List<Order> findAll()
+//	{
+//		return orderService.findAll();
+//	}
+	
 	@GetMapping
-	List<Order> findAll()
-	{
+	List<OrderResponse> findAll(){
+		System.out.println("findall controller");
 		return orderService.findAll();
 	}
 	
