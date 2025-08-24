@@ -13,8 +13,9 @@ import com.wipro.orderms.dto.Payment;
 import com.wipro.orderms.entity.Order;
 import com.wipro.orderms.repo.OrderRepo;
 import com.wipro.orderms.service.OrderService;
-//import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import com.wipro.orderms.service.PaymentConnectService;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 
 @Service
@@ -30,6 +31,7 @@ public class OrderServiceImpl implements OrderService {
 	PaymentConnectService paymentConnectService;
 
     @Override
+    @CircuitBreaker(name="order-cb", fallbackMethod="handleFallBack")
     public void save(Order order) {
         order.setOrderStatus("I");
         orderRepo.save(order);
@@ -42,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
         payment.setPaymentAmount(order.getOrderValue());
         payment.setPaymentStatus(true);
 
-        try {
+       // try {
         //	ResponseEntity<Payment>   response= restTemplate.postForEntity(url, payment, Payment.class);
         	
         ResponseEntity<Payment> response = paymentConnectService.savePaymentData(payment);
@@ -50,9 +52,9 @@ public class OrderServiceImpl implements OrderService {
         if (response.getStatusCode()== HttpStatusCode.valueOf(200)) {
             order.setOrderStatus("P");
         } 
-        }catch(Exception ex){
-        	order.setOrderStatus("C");
-        }
+       // }catch(Exception ex){
+       // 	order.setOrderStatus("C");
+      //  }
         orderRepo.save(order);
     }
 
@@ -62,6 +64,7 @@ public class OrderServiceImpl implements OrderService {
 //    }
     
     @Override
+    
     public List<OrderResponse> findAll() {
         List<Order> orders = orderRepo.findAll();
         List<OrderResponse> responses = new ArrayList<>();
@@ -87,5 +90,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
   
-   
+    void handleFallBack(Order order, Throwable t) {
+        System.out.println("--System is down-- ");
+       // order.setOrderStatus("C");
+        //orderRepo.save(order);
+    }
+
 }
