@@ -53,7 +53,7 @@ flights: FlightDTO[] = [];
     if (airlines.length > 0) {
       this.filteredFlights = this.flights.filter(f => airlines.includes(f.airline));
     } else {
-      this.filteredFlights = [...this.flights]; // no filter, show all
+      this.filteredFlights = [...this.flights]; 
     }
   }
 

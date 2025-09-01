@@ -1,8 +1,11 @@
 .container{
-    margin-top: 50px;    
+    margin-top: 50px; 
 }
 h2{
     text-align: center;
     color: white;
     padding-bottom: 30px;
+}
+#formstyle{
+    margin-left:80px;
 }

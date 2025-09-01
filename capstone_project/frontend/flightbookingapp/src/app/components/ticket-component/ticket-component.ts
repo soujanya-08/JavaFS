@@ -33,7 +33,7 @@ booking: any;
     doc.text(`Booking ID: ${this.booking.bookingId}`, 20, 40);
     doc.text(`Passenger Name: ${this.booking.passengerName}`, 20, 50);
     doc.text(`Flight Number: ${this.booking.flightNumber}`, 20, 60);
-    doc.text(`Amount: ₹${this.booking.amount}`, 20, 70);
+    doc.text(`Amount: ${this.booking.amount}`, 20, 70);
     doc.text(`Status: ${this.booking.status}`, 20, 80);
 
     doc.text('Have a safe and happy journey!', 20, 100);

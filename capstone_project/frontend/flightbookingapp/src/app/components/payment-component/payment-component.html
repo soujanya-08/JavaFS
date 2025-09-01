@@ -36,7 +36,7 @@
         #accountNumber="ngModel"
       />
       <div *ngIf="accountNumber.invalid && accountNumber.touched" style="color:red; font-size:12px;">
-        Account number must be 12 digits
+        Account number must be 16 digits
       </div>
 
       <label for="cvv">CVV</label>
@@ -59,7 +59,6 @@
       <select id="mode" [(ngModel)]="paymentDetails.mode" name="mode">
         <option value="CREDIT_CARD">Credit Card</option>
         <option value="DEBIT_CARD"> Debit Card</option>
-        <option value="UPI">UPI</option>
         <option value="NET_BANKING">Net Banking</option>
       </select>
 

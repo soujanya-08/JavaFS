@@ -1,22 +1,48 @@
 <div class="container">
-  <h2>Book Your Flights</h2>
-  <form [formGroup]="searchForm" (ngSubmit)="search()" class="row gx-2 gy-3 mb-4">
-  <div class="col-md-2">
+ <div class="card shadow-lg border-0 rounded-3 p-4 bg-light">
+    <h2 class="text-primary mb-4">✈️ Book Your Flights</h2>
+
+   <form id="formstyle" [formGroup]="searchForm" (ngSubmit)="search()" class="row gx-2 gy-3 mb-4 align-items-center">
+
+  <div class="col-md-2 position-relative">
     <input type="text" formControlName="source" class="form-control" placeholder="Source">
     <div *ngIf="searchForm.get('source')?.invalid && searchForm.get('source')?.touched" class="text-danger small">
       Source is required
     </div>
+    <ul *ngIf="filteredSources.length"
+        class="list-group position-absolute w-100 shadow-sm"
+        style="z-index:1000; max-height:150px; overflow-y:auto; top:100%; left:0;">
+      <li class="list-group-item list-group-item-action"
+          *ngFor="let s of filteredSources"
+          (click)="searchForm.patchValue({source: s}); filteredSources=[]">
+        {{ s }}
+      </li>
+    </ul>
   </div>
- <div class="col-md-1 d-flex align-items-center justify-content-center">
-      <button type="button" class="btn btn-outline-secondary" (click)="swapSourceDestination()">
-        ⇄
-      </button>
-    </div>
-  <div class="col-md-2">
+
+  <!-- Swap Button -->
+  <div class="col-md-1 d-flex align-items-center justify-content-center">
+    <button type="button" class="btn btn-outline-secondary rounded-circle" 
+            (click)="swapSourceDestination()" title="Swap">
+      ⇄
+    </button>
+  </div>
+
+  <div class="col-md-2 position-relative">
     <input type="text" formControlName="destination" class="form-control" placeholder="Destination">
     <div *ngIf="searchForm.get('destination')?.invalid && searchForm.get('destination')?.touched" class="text-danger small">
       Destination is required
     </div>
+    <ul *ngIf="filteredDestinations.length"
+        class="list-group position-absolute w-100 shadow-sm"
+        style="z-index:1000; max-height:150px; overflow-y:auto; top:100%; left:0;">
+      <li class="list-group-item list-group-item-action"
+          *ngFor="let d of filteredDestinations"
+          (click)="searchForm.patchValue({destination: d}); filteredDestinations=[]">
+        {{ d }}
+      </li>
+    </ul>
+    
   </div>
 
   <div class="col-md-2">
@@ -27,9 +53,16 @@
   </div>
 
   <div class="col-md-3">
-    <button class="btn btn-primary w-100" [disabled]="searchForm.invalid">Search Flights</button>
+    <button class="btn btn-primary w-100 shadow-sm" [disabled]="searchForm.invalid">
+      🔍 Search Flights
+    </button>
   </div>
 </form>
+<div *ngIf="searchForm.hasError('sameLocation') && searchForm.get('destination')?.touched"
+     class="text-danger small">
+  Source and Destination cannot be the same
+</div>
+ </div>
 
 
   <table class="table table-striped" *ngIf="flights.length > 0">

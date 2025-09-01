@@ -16,7 +16,10 @@ export class SearchComponent {
   flights: FlightDTO[] = [];
 
   displayedColumns = ['flightNumber', 'airline', 'travelDate', 'price', 'action'];
+airports = ['Delhi', 'Mumbai', 'Chennai', 'Bangalore', 'Hubli'];
 
+filteredSources: string[] = [];
+filteredDestinations: string[] = [];
   constructor(
     private fb: FormBuilder,
     private flightService: FlightSearchService,
@@ -26,13 +29,40 @@ export class SearchComponent {
   source: ['', Validators.required],
   destination: ['', Validators.required],
   travelDate: ['', Validators.required]
+},
+{
+    validators: this.sourceDestinationValidator
+  });
+this.searchForm.get('source')?.valueChanges.subscribe(value => {
+  this.filteredSources = this.filterAirports(value);
 });
+
+this.searchForm.get('destination')?.valueChanges.subscribe(value => {
+  this.filteredDestinations = this.filterAirports(value);
+});
+
   }
+  sourceDestinationValidator(form: FormGroup) {
+  const source = form.get('source')?.value;
+  const destination = form.get('destination')?.value;
+
+  return source && destination && source === destination
+    ? { sameLocation: true }
+    : null;
+}
+  filterAirports(query: string): string[] {
+  const lower = query?.toLowerCase() || '';
+  return this.airports.filter(a => a.toLowerCase().includes(lower));
+}
 
   search() {
     if (this.searchForm.invalid) {
-    this.searchForm.markAllAsTouched(); // show errors
+    this.searchForm.markAllAsTouched();
     alert("Please fill all required fields before searching");
+    return;
+  }
+  if (this.searchForm.hasError('sameLocation')) {
+    alert("Source and Destination cannot be the same!");
     return;
   }
     const { source, destination, travelDate } = this.searchForm.value;
@@ -56,6 +86,8 @@ swapSourceDestination() {
     source: destination,
     destination: source
   });
+   this.filteredSources = [];
+  this.filteredDestinations = [];
 }
   bookFlight(flight: FlightDTO) {
     this.router.navigate(['/flight', flight.id]);
