@@ -5,7 +5,8 @@ import com.wipro.bookingms.dto.FlightDTO;
 import com.wipro.bookingms.entity.BookFlight;
 
 public interface BookingService {
-	BookFlight createBooking(Long flightId, String passengerName, String email);
+	BookFlight createBooking(BookFlight bookingRequest);
+	BookFlight getBookingById(String id);
 	BookFlight getBooking(Long id);
 	List<FlightDTO> getAllFlights();
 }

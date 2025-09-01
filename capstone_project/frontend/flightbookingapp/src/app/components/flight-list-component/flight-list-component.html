@@ -1,0 +1,61 @@
+<div class="flight-page">
+  <div class="filters">
+    <h4>Filter by Airline</h4>
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="filters.indigo" (change)="applyFilters()" />
+        Indigo
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="filters.spicejet" (change)="applyFilters()" />
+        SpiceJet
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="filters.emirates" (change)="applyFilters()" />
+        Emirates
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="filters.airIndia" (change)="applyFilters()" />
+        AirIndia
+      </label>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <div *ngIf="filteredFlights.length">
+      <h2 style="color: white; text-align: center;">Flights available</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Flight No</th>
+            <th>Airline</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of filteredFlights">
+            <td>{{ f.flightNumber }}</td>
+            <td>{{ f.airline }}</td>
+            <td>{{ f.travelDate }}</td>
+            <td>{{ f.price | currency:'INR' }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="onBook(f)">Book</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="filteredFlights.length === 0">
+      <p style="color: white;">No flights found.</p>
+    </div>
+  </div>
+</div>

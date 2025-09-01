@@ -1,0 +1,69 @@
+<div class="payment-wrapper">
+  <div class="payment-container">
+    <h2>Payment for Booking</h2>
+
+    <div class="summary">
+      <p><strong>Flight Number:</strong> {{ flight }}</p>
+      <p><strong>Passenger:</strong> {{ passenger }}</p>
+      <p><strong>Amount:</strong> ₹{{ paymentDetails.amount }}</p>
+    </div>
+
+    <form #paymentForm="ngForm" (ngSubmit)="proceedPayment()" class="payment-form">
+      <label for="senderName">Sender Name</label>
+      <input
+        type="text"
+        id="senderName"
+        [(ngModel)]="paymentDetails.senderName" 
+        name="senderName"
+        placeholder="Enter your name"
+        required
+        #senderName="ngModel"
+      />
+      <div *ngIf="senderName.invalid && senderName.touched" style="color:red; font-size:12px;">
+        Name is required
+      </div>
+
+      <label for="accountNumber">Account Number</label>
+      <input
+        type="text"
+        id="accountNumber"
+        [(ngModel)]="paymentDetails.accountNumber"
+        name="accountNumber"
+        maxlength="16"
+        placeholder="Enter card/account number"
+        required
+        pattern="[0-9]{16}"
+        #accountNumber="ngModel"
+      />
+      <div *ngIf="accountNumber.invalid && accountNumber.touched" style="color:red; font-size:12px;">
+        Account number must be 12 digits
+      </div>
+
+      <label for="cvv">CVV</label>
+      <input
+        type="password"
+        id="cvv"
+        [(ngModel)]="paymentDetails.cvv"
+        name="cvv"
+        maxlength="3"
+        placeholder="***"
+        required
+        pattern="[0-9]{3}"
+        #cvv="ngModel"
+      />
+      <div *ngIf="cvv.invalid && cvv.touched" style="color:red; font-size:12px;">
+        CVV must be 3 digits
+      </div>
+
+      <label for="mode">Payment Mode</label>
+      <select id="mode" [(ngModel)]="paymentDetails.mode" name="mode">
+        <option value="CREDIT_CARD">Credit Card</option>
+        <option value="DEBIT_CARD"> Debit Card</option>
+        <option value="UPI">UPI</option>
+        <option value="NET_BANKING">Net Banking</option>
+      </select>
+
+      <button type="submit">Proceed to Pay</button>
+    </form>
+  </div>
+</div>

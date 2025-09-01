@@ -32,7 +32,6 @@ public class FlightController {
     public Flight addFlight(@RequestBody Flight flight) {
         return flightService.addFlight(flight);
     }
-    
     @GetMapping
     @Operation(summary = "Get all available flights")
     public List<Flight> getAllFlights() {

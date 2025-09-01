@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Book Your Flights</h2>
+  <form [formGroup]="searchForm" (ngSubmit)="search()" class="row gx-2 gy-3 mb-4">
+  <div class="col-md-3">
+    <input type="text" formControlName="source" class="form-control" placeholder="Source">
+    <div *ngIf="searchForm.get('source')?.invalid && searchForm.get('source')?.touched" class="text-danger small">
+      Source is required
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <input type="text" formControlName="destination" class="form-control" placeholder="Destination">
+    <div *ngIf="searchForm.get('destination')?.invalid && searchForm.get('destination')?.touched" class="text-danger small">
+      Destination is required
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <input type="date" formControlName="travelDate" class="form-control">
+    <div *ngIf="searchForm.get('travelDate')?.invalid && searchForm.get('travelDate')?.touched" class="text-danger small">
+      Travel date is required
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <button class="btn btn-primary w-100" [disabled]="searchForm.invalid">Search Flights</button>
+  </div>
+</form>
+
+
+  <table class="table table-striped" *ngIf="flights.length > 0">
+    <thead>
+      <tr>
+        <th>Flight No</th>
+        <th>Airline</th>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of flights">
+        <td>{{ f.flightNumber }}</td>
+        <td>{{ f.airline }}</td>
+        <td>{{ f.travelDate }}</td>
+        <td>{{ f.price | currency }}</td>
+        <td><button class="btn btn-success btn-sm" (click)="bookFlight(f)">Book</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

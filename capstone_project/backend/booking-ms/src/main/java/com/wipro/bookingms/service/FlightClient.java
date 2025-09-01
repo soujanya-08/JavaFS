@@ -8,17 +8,30 @@ import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.wipro.bookingms.dto.FlightDTO;
 
 @FeignClient(name = "flight-ms")
 public interface FlightClient {
 
+	@GetMapping("/flight/search")
+    @CircuitBreaker(name = "flightService", fallbackMethod = "searchFlightsFallback")
+    List<FlightDTO> searchFlights(
+        @RequestParam("source") String source,
+        @RequestParam("destination") String destination,
+        @RequestParam("travelDate") String travelDate
+    );
+
+    default List<FlightDTO> searchFlightsFallback(String source, String destination, String travelDate, Throwable throwable) {
+    System.out.println("Flight server is down");    
+    	return Collections.emptyList();
+    }
+	  
     @GetMapping("/flight/{id}")
     @CircuitBreaker(name = "flightService", fallbackMethod = "getFlightFallback")
     FlightDTO getFlightById(@PathVariable("id") Long id);
 
-    // fallback method
     default FlightDTO getFlightFallback(Long id, Throwable throwable) {
         FlightDTO fallback = new FlightDTO();
         fallback.setId(id);
@@ -27,6 +40,7 @@ public interface FlightClient {
         fallback.setSource("N/A");
         fallback.setDestination("N/A");
         fallback.setPrice(0.0);
+        System.out.println("Flight server is down"); 
         return fallback;
     }
     
@@ -35,7 +49,9 @@ public interface FlightClient {
     List<FlightDTO> getAllFlights();
 
     default List<FlightDTO> getAllFlightsFallback(Throwable throwable) {
-        return Collections.emptyList(); // or any fallback list
+    	System.out.println("Flight server is down"); 
+        return Collections.emptyList();
     }
+    
 
 }

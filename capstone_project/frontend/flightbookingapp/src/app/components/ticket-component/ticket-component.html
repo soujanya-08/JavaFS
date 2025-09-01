@@ -1,0 +1,21 @@
+<div class="ticket-container">
+  <h2 style="color: white;">Booking Confirmation</h2>
+
+  <div class="ticket-card">
+    <p><strong>Booking ID:</strong> {{ booking?.bookingId }}</p>
+    <p><strong>Passenger Name:</strong> {{ booking?.passengerName }}</p>
+    <p><strong>Flight Number:</strong> {{ booking?.flightNumber }}</p>
+    <p><strong>Price:</strong> ₹{{ booking?.amount }}</p>
+    <p><strong>Status:</strong>
+      <span [ngClass]="{
+        'success': booking?.status === 'SUCCESS',
+        'failed': booking?.status === 'FAILED'
+      }">
+        {{ booking?.status }}
+      </span>
+    </p>
+    <p>Have a safe and happy journey!</p>
+  </div>
+
+<button (click)="goHome()">Home</button>
+</div>

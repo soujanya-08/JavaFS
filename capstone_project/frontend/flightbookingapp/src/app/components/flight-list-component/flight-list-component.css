@@ -1,0 +1,22 @@
+.flight-page {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+
+.filters {
+  width: 200px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 20px;
+}
+
+.filters h4 {
+  margin-bottom: 10px;
+}
+
+.container {
+  flex: 1;
+}

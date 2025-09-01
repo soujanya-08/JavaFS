@@ -1,0 +1,11 @@
+<div class="container card p-3">
+  <h3>{{ flight?.airline }} - {{ flight?.flightNumber }}</h3>
+  <p><b>From:</b> {{ flight?.source }} → <b>To:</b> {{ flight?.destination }}</p>
+  <p><b>Date:</b> {{ flight?.travelDate |date:'dd-MM-yyyy' }}</p>
+
+  <p><b>Passenger:</b> {{ passenger?.name }} ({{ passenger?.email }})</p>
+  
+  <h4>Total Amount: ₹ {{ flight?.price }}</h4>
+
+  <button class="btn btn-primary w-100" (click)="goToPayment()">Proceed to Pay</button>
+</div>
