@@ -49,7 +49,14 @@ this.router.navigate(['/search/results'], {
     
 });
   }
-
+swapSourceDestination() {
+  const source = this.searchForm.get('source')?.value;
+  const destination = this.searchForm.get('destination')?.value;
+  this.searchForm.patchValue({
+    source: destination,
+    destination: source
+  });
+}
   bookFlight(flight: FlightDTO) {
     this.router.navigate(['/flight', flight.id]);
   }

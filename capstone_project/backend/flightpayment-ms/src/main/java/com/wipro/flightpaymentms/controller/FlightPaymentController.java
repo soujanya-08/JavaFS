@@ -5,7 +5,8 @@ import com.wipro.flightpaymentms.entity.Payment;
 import com.wipro.flightpaymentms.service.PaymentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @RestController
 @RequestMapping("/flightpayment")
 @Tag(name = "Flight Payment API", description = "Payment operations")
@@ -15,6 +16,11 @@ public class FlightPaymentController {
 	
 	@PostMapping
 	@Operation(summary = "Add payment details")
+	@ApiResponses({
+        @ApiResponse(responseCode = "201", description = "Payment processed successfully"),
+        @ApiResponse(responseCode = "400", description = "Invalid payment details"),
+        @ApiResponse(responseCode = "500", description = "Internal server error while processing payment")
+    })
 	public Payment makePayment(@RequestBody Payment paymentRequest) {
 	    System.out.println("Incoming booking request: " + paymentRequest);
 
@@ -31,6 +37,10 @@ public class FlightPaymentController {
 	 
     @GetMapping("/{id}")
     @Operation(summary = "Get payment details by ID")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Payment details retrieved successfully"),
+        @ApiResponse(responseCode = "404", description = "Payment not found")
+    })
     public Payment get(@PathVariable Long id) {
         return service.getPayment(id);
     }

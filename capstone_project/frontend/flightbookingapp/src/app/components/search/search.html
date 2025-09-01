@@ -1,21 +1,25 @@
 <div class="container">
   <h2>Book Your Flights</h2>
   <form [formGroup]="searchForm" (ngSubmit)="search()" class="row gx-2 gy-3 mb-4">
-  <div class="col-md-3">
+  <div class="col-md-2">
     <input type="text" formControlName="source" class="form-control" placeholder="Source">
     <div *ngIf="searchForm.get('source')?.invalid && searchForm.get('source')?.touched" class="text-danger small">
       Source is required
     </div>
   </div>
-
-  <div class="col-md-3">
+ <div class="col-md-1 d-flex align-items-center justify-content-center">
+      <button type="button" class="btn btn-outline-secondary" (click)="swapSourceDestination()">
+        ⇄
+      </button>
+    </div>
+  <div class="col-md-2">
     <input type="text" formControlName="destination" class="form-control" placeholder="Destination">
     <div *ngIf="searchForm.get('destination')?.invalid && searchForm.get('destination')?.touched" class="text-danger small">
       Destination is required
     </div>
   </div>
 
-  <div class="col-md-3">
+  <div class="col-md-2">
     <input type="date" formControlName="travelDate" class="form-control">
     <div *ngIf="searchForm.get('travelDate')?.invalid && searchForm.get('travelDate')?.touched" class="text-danger small">
       Travel date is required
